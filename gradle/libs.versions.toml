@@ -8,6 +8,7 @@ lifecycleViewModel = "2.8.1"
 navigationCompose = "2.7.0-alpha07"
 koin = "3.6.0-Beta4"
 koin-compose = "1.1.5"
+mavenPublish = "0.28.0"
 
 [libraries]
 androidx-activityCompose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activityCompose" }
@@ -28,3 +29,5 @@ compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "
 compose = { id = "org.jetbrains.compose", version.ref = "compose" }
 android-application = { id = "com.android.application", version.ref = "agp" }
 android-library = { id = "com.android.library", version.ref = "agp" }
+mavenPublish = { id = "com.vanniktech.maven.publish", version.ref = "mavenPublish" }
+
