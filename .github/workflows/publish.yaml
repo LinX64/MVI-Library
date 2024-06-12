@@ -48,7 +48,7 @@ jobs:
 
       - name: 🚀 Publish Library on Maven Central
         if: always() && (github.event.inputs.should-publish == 'true')
-        run: ./gradlew publishAndReleaseToMavenCentral --no-configuration-cache
+        run: ./gradlew publish
         env:
           ORG_GRADLE_PROJECT_signingInMemoryKey: ${{ secrets.GPG_KEY }}
           ORG_GRADLE_PROJECT_signingInMemoryKeyPassword: ${{ secrets.GPG_PASSWORD }}

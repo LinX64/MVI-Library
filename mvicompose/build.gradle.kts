@@ -1,3 +1,4 @@
+import com.vanniktech.maven.publish.AndroidSingleVariantLibrary
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
@@ -73,4 +74,41 @@ android {
     buildFeatures {
         compose = true
     }
+}
+
+publishing {
+    publications {
+        register<MavenPublication>("release") {
+            groupId = "io.github.linx64"
+            artifactId = "mvicompose"
+            version = System.getenv("RELEASE_VERSION")
+            artifact("build/outputs/aar/${artifactId}-release.aar")
+        }
+
+        repositories {
+            maven {
+                name = "MVI-Library"
+                url = uri("https://maven.pkg.github.com/LinX64/MVI-Library")
+
+                credentials {
+                    username = System.getenv("GITHUB_ACTOR")
+                    password = System.getenv("GITHUB_TOKEN")
+                }
+            }
+        }
+    }
+}
+
+mavenPublishing {
+    configure(
+        AndroidSingleVariantLibrary(
+            variant = "release",
+            sourcesJar = true,
+            publishJavadocJar = true,
+        )
+    )
+}
+
+tasks.named("signReleasePublication") {
+    dependsOn(":mvicompose:bundleReleaseAar")
 }
