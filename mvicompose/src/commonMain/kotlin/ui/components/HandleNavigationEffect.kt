@@ -6,7 +6,7 @@ import kotlinx.coroutines.flow.onEach
 import ui.MviViewModel
 
 @Composable
-internal fun <Effect> HandleNavigationEffect(
+fun <Effect> HandleNavigationEffect(
     viewModel: MviViewModel<*, *, Effect>,
     onEffect: (Effect) -> Unit
 ) {
