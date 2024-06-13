@@ -109,6 +109,4 @@ mavenPublishing {
     )
 }
 
-tasks.named("signReleasePublication") {
-    dependsOn(":mvicompose:bundleReleaseAar")
-}
+

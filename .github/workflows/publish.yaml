@@ -46,6 +46,9 @@ jobs:
         env:
           RELEASE_VERSION: ${{ github.event.inputs.release-version }}
 
+      - name: Do Clean
+        run: ./gradlew clean
+
       - name: 🚀 Publish Library on Maven Central
         if: always() && (github.event.inputs.should-publish == 'true')
         run: ./gradlew publish

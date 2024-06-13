@@ -1,7 +1,7 @@
 [versions]
 kotlin = "2.0.0"
 compose = "1.6.11"
-agp = "8.4.2"
+agp = "8.2.2"
 androidx-activityCompose = "1.9.0"
 kotlinx-coroutines = "1.9.0-RC"
 lifecycleViewModel = "2.8.1"
@@ -14,7 +14,6 @@ mavenPublish = "0.28.0"
 androidx-activityCompose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activityCompose" }
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinx-coroutines" }
 kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinx-coroutines" }
-
 lifecycle-viewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel", version.ref = "lifecycleViewModel" }
 navigation-compose = { module = "org.jetbrains.androidx.navigation:navigation-compose", version.ref = "navigationCompose" }
 
