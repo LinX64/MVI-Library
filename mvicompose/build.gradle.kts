@@ -118,8 +118,11 @@ tasks.register<Jar>("sourceReleaseJar") {
     archiveClassifier.set("sources")
 }
 
-tasks.named("signReleasePublication") {
-    doFirst { dependsOn(tasks.named("bundleReleaseAar")) }
+afterEvaluate {
+    tasks.named("signReleasePublication") {
+        dependsOn(tasks.named("bundleReleaseAar"))
+    }
 }
+
 
 
