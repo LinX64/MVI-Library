@@ -4,8 +4,6 @@
 
 ## 🚀📘 MVI Library for Compose Multiplatform
 
-## Overview
-
 The **MVI Compose Multiplatform Library** is designed to facilitate the implementation of the MVI (
 Model-View-Intent) architecture using Jetpack Compose for Multiplatform. It allows developers to
 create scalable, maintainable, and testable applications with a clear separation of concerns.
