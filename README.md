@@ -30,7 +30,7 @@ mvi-compose-common = { group = "io.github.linx64", name = "mvicompose", version.
 
 ```kotlin
 dependencies {
-    implementation("io.github.linx64:mvi-compose:1.0")
+    implementation("io.github.linx64:mvicompose:1.0")
 }
 ```
 
