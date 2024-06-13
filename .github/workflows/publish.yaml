@@ -51,7 +51,7 @@ jobs:
 
       - name: 🚀 Publish Library on Maven Central
         if: always() && (github.event.inputs.should-publish == 'true')
-        run: ./gradlew publish
+        run: ./gradlew publishAndReleaseToMavenCentral --no-configuration-cache
         env:
           ORG_GRADLE_PROJECT_signingInMemoryKey: ${{ secrets.GPG_KEY }}
           ORG_GRADLE_PROJECT_signingInMemoryKeyPassword: ${{ secrets.GPG_PASSWORD }}
@@ -61,7 +61,7 @@ jobs:
 
       - name: 🔨Assemble
         if: always() && (github.event.inputs.should-publish == 'true')
-        run: ./gradlew publishAndReleaseToMavenCentral --no-configuration-cache
+        run: ./gradlew :mvicompose:assemble
         env:
           RELEASE_VERSION: ${{ github.event.inputs.release-version }}
 
