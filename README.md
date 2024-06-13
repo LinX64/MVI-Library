@@ -1,6 +1,8 @@
-## MVI Library for Compose Multiplatform
+<p align="center">
+  <img src="https://github.com/LinX64/MVI-Library/actions/workflows/publish.yaml/badge.svg" alt="master CI">
+</p>
 
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+## 🚀📘 MVI Library for Compose Multiplatform
 
 ## Overview
 
