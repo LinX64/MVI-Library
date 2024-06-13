@@ -61,7 +61,7 @@ jobs:
 
       - name: 🔨Assemble
         if: always() && (github.event.inputs.should-publish == 'true')
-        run: ./gradlew :mvicompose:assemble
+        run: ./gradlew publishAndReleaseToMavenCentral --no-configuration-cache
         env:
           RELEASE_VERSION: ${{ github.event.inputs.release-version }}
 
