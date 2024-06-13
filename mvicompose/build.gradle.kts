@@ -110,19 +110,8 @@ mavenPublishing {
     )
 }
 
-tasks.register<Jar>("sourceReleaseJar") {
-    doFirst {
-        dependsOn(tasks.findByName("generateResourceAccessorsForAndroidMain"))
-    }
-    from(sourceSets["main"].allSource)
-    archiveClassifier.set("sources")
-}
-
 afterEvaluate {
     tasks.named("signReleasePublication") {
         dependsOn(tasks.named("bundleReleaseAar"))
     }
 }
-
-
-
