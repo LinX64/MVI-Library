@@ -1,4 +1,5 @@
-import com.vanniktech.maven.publish.AndroidSingleVariantLibrary
+import com.vanniktech.maven.publish.JavadocJar
+import com.vanniktech.maven.publish.KotlinMultiplatform
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
@@ -101,12 +102,20 @@ publishing {
 
 mavenPublishing {
     configure(
-        AndroidSingleVariantLibrary(
-            variant = "release",
+        KotlinMultiplatform(
+            javadocJar = JavadocJar.None(),
             sourcesJar = true,
-            publishJavadocJar = true,
+            androidVariantsToPublish = listOf("release"),
         )
     )
+}
+
+tasks.register<Jar>("sourceReleaseJar") {
+    doFirst {
+        dependsOn(tasks.findByName("generateResourceAccessorsForAndroidMain"))
+    }
+    from(sourceSets["main"].allSource)
+    archiveClassifier.set("sources")
 }
 
 
