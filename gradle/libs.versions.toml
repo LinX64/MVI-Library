@@ -9,7 +9,7 @@ navigationCompose = "2.7.0-alpha07"
 koin = "3.6.0-wasm-alpha2"
 koin-compose = "1.1.5"
 mavenPublish = "0.28.0"
-mvi-compose = "1.1"
+mvi-compose = "1.3"
 
 [libraries]
 androidx-activityCompose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activityCompose" }
