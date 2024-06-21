@@ -42,13 +42,11 @@ kotlin {
             implementation(compose.components.uiToolingPreview)
             implementation(libs.kotlinx.coroutines.core)
         }
-
         androidMain.dependencies {
             implementation(compose.uiTooling)
             implementation(libs.androidx.activityCompose)
             implementation(libs.kotlinx.coroutines.android)
         }
-
         iosMain.dependencies {}
     }
 }
@@ -108,10 +106,4 @@ mavenPublishing {
             androidVariantsToPublish = listOf("debug", "release")
         )
     )
-}
-
-afterEvaluate {
-    tasks.named("signReleasePublication") {
-        dependsOn(tasks.named("bundleReleaseAar"))
-    }
 }
