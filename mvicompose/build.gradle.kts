@@ -2,6 +2,8 @@ import com.vanniktech.maven.publish.JavadocJar
 import com.vanniktech.maven.publish.KotlinMultiplatform
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
+group = "com.mvicompose.linx64"
+
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.multiplatform)
@@ -52,7 +54,7 @@ kotlin {
 }
 
 android {
-    namespace = "com.mvicompose"
+    namespace = "com.mvicompose.linx64"
     compileSdk = 34
 
     defaultConfig {
@@ -103,7 +105,7 @@ mavenPublishing {
         KotlinMultiplatform(
             javadocJar = JavadocJar.None(),
             sourcesJar = true,
-            androidVariantsToPublish = listOf("debug", "release")
+            androidVariantsToPublish = listOf("release")
         )
     )
 }

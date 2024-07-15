@@ -1,4 +1,4 @@
-package ui
+package com.mvicompose.linx64.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

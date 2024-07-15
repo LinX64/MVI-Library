@@ -1,11 +1,11 @@
-package ui.components
+package com.mvicompose.linx64.ui.components
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import kotlinx.coroutines.flow.onEach
-import ui.MviViewModel
+import com.mvicompose.linx64.ui.MviViewModel
 
 @Composable
 fun <State, Effect> ComposeScreen(

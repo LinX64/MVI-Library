@@ -1,6 +1,6 @@
 package com.client.mvicompose
 
-import ui.MviViewModel
+import com.mvicompose.linx64.ui.MviViewModel
 
 class MainViewModel : MviViewModel<MainViewEvent, MainState, MainNavigationEffect>(MainState.Loading) {
 
