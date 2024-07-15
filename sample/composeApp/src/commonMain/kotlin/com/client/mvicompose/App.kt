@@ -13,7 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.client.mvicompose.theme.AppTheme
 import org.koin.compose.KoinContext
-import ui.components.ComposeScreen
+import com.mvicompose.linx64.ui.components.ComposeScreen
 
 @Composable
 internal fun App() {
