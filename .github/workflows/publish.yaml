@@ -40,9 +40,6 @@ jobs:
         env:
           RELEASE_VERSION: ${{ github.event.inputs.release-version }}
 
-      - name: Do Clean
-        run: ./gradlew clean
-
       - name: 🚀 Publish KotlinMultiplatform Library to Maven Central
         if: always() && (github.event.inputs.should-publish == 'true')
         run: ./gradlew publish --no-configuration-cache
