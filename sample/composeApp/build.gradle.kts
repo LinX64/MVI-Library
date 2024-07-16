@@ -40,7 +40,7 @@ kotlin {
             implementation(libs.kotlinx.coroutines.core)
 
             // Library
-            // implementation(libs.mvi.compose.common)
+            //implementation(libs.mvi.compose.common)
             implementation(projects.mvicompose)
 
             api(libs.koin.core)
