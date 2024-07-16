@@ -28,6 +28,9 @@ jobs:
           distribution: 'zulu'
           java-version: 17
 
+      - name: Do Clean
+        run: ./gradlew clean
+
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v3
 
