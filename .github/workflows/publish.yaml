@@ -3,7 +3,7 @@ name: Publish
 on:
   pull_request:
     branches:
-      - master
+      - develop
   workflow_dispatch:
     inputs:
       should-publish:
