@@ -16,7 +16,7 @@ on:
 
 jobs:
   build-and-publish:
-    runs-on: macos-latest
+    runs-on: macos-14
 
     steps:
       - name: Checkout
@@ -45,7 +45,7 @@ jobs:
 
       - name: 🚀 Publish KotlinMultiplatform Library to Maven Central
         if: always() && (github.event.inputs.should-publish == 'true')
-        run: ./gradlew publishKotlinMultiplatformPublicationToMavenCentralRepository --no-configuration-cache
+        run: ./gradlew publish --no-configuration-cache
         env:
           ORG_GRADLE_PROJECT_signingInMemoryKey: ${{ secrets.GPG_KEY }}
           ORG_GRADLE_PROJECT_signingInMemoryKeyPassword: ${{ secrets.GPG_PASSWORD }}
