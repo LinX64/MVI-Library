@@ -113,6 +113,3 @@ mavenPublishing {
 tasks.named("signReleasePublication") {
     dependsOn(":mvicompose:bundleReleaseAar")
 }
-dependencies {
-    implementation(libs.androidx.activity.ktx)
-}
