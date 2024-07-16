@@ -1,6 +1,9 @@
 name: Publish
 
 on:
+  pull_request:
+    branches:
+      - master
   workflow_dispatch:
     inputs:
       should-publish:
