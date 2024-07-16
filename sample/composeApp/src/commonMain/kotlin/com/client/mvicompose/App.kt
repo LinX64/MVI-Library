@@ -12,8 +12,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.client.mvicompose.theme.AppTheme
+import com.mvicompose.linx64.ui.components.HandleNavigationEffect
 import org.koin.compose.KoinContext
-import com.mvicompose.linx64.ui.components.ComposeScreen
 
 @Composable
 internal fun App() {
@@ -43,16 +43,10 @@ private fun MainScreen(
         Text("Hello, world!")
     }
 
-    ComposeScreen(
-        viewModel = mainViewModel,
-        onEffect = { effect ->
-            when (effect) {
-                MainNavigationEffect.NavigateToSettings -> onNavigateToSettings()
-            }
+    HandleNavigationEffect(mainViewModel) { effect ->
+        when (effect) {
+            is MainNavigationEffect.NavigateToSettings -> onNavigateToSettings()
         }
-    ) { state ->
-        // Your UI that uses the state
-        // Example: Text(text = state.someProperty)
     }
 }
 

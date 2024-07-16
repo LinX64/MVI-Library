@@ -40,12 +40,12 @@ kotlin {
             implementation(libs.kotlinx.coroutines.core)
 
             // Library
-            // implementation(libs.mvi.compose.common)
+            //implementation(libs.mvi.compose.common)
             implementation(projects.mvicompose)
 
             api(libs.koin.core)
             implementation(libs.koin.compose)
-            implementation(libs.lifecycle.viewmodel)
+            implementation(libs.androidx.lifecycle.viewmodel)
             implementation(libs.navigation.compose)
         }
 

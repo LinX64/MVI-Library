@@ -54,17 +54,11 @@ class MainViewModel : MviViewModel<MainViewEvent, MainState, MainNavigationEffec
 Also, for Effects, you can use `ComposeScreen` component inside the Composable screens to handle the navigation and side effects.
 
 ```kotlin
- ComposeScreen(
-        viewModel = mainViewModel,
-        onEffect = { effect ->
-            when (effect) {
-                MainNavigationEffect.NavigateToSettings -> onNavigateToSettings()
-            }
-        }
-    ) { state ->
-        // Your UI that uses the state
-        // Example: Text(text = state.someProperty)
+HandleNavigationEffect(mainViewModel) { effect ->
+    when (effect) {
+        is MainNavigationEffect.NavigateToSettings -> onNavigateToSettings()
     }
+}
 ```
 
 Please see the [sample app](https://github.com/LinX64/MVI-Library/tree/develop/sample) for a complete example of how to use this library.
