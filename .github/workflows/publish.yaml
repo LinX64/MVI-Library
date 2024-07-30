@@ -1,12 +1,18 @@
 name: Publish
 
 on:
-  push:
-    branches:
-      - develop
-  pull_request:
-    branches:
-      - develop
+  workflow_dispatch:
+    inputs:
+      should-publish:
+        type: boolean
+        description: "Do you want to publish the library?"
+        default: false
+        required: true
+
+      release-version:
+        type: string
+        description: "Specify the version to release"
+        required: true
 
 jobs:
   build-and-publish:
@@ -21,6 +27,9 @@ jobs:
         with:
           distribution: 'zulu'
           java-version: 17
+
+      - name: Do Clean
+        run: ./gradlew clean
 
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v3
