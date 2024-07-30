@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="https://github.com/LinX64/MVI-Library/actions/workflows/publish.yaml/badge.svg" alt="master CI">
-</p>
-
 ## 🚀📘 MVI Library for Compose Multiplatform
 
 The **MVI Compose Multiplatform Library** is designed to facilitate the implementation of the MVI (
@@ -23,14 +19,14 @@ Add the library to your project's dependencies.
 
 ```kotlin
 mvi-compose = "<version>"
-mvi-compose-common = { group = "io.github.linx64", name = "mvicompose", version.ref = "mvi-compose" }
+mvi-compose-common = { module = "io.github.linx64:mvicompose", version.ref = "mvi-compose" }
 ```
 
 #### Gradle (Kotlin DSL)
 
 ```kotlin
 dependencies {
-    implementation("io.github.linx64:mvicompose:1.0")
+    implementation("io.github.linx64:mvicompose:1.5") //Find the latest version here: https://central.sonatype.com/artifact/io.github.linx64/mvicompose
 }
 ```
 
